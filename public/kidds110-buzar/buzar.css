@@ -20,7 +20,6 @@ h1 {
   width: 800px;
   height: 700px;
   background-color: black;
-  background-image: url(./img/OFF.png);
   text-decoration: none;
   text-align: center;
   margin-left: 100px;
@@ -90,4 +89,10 @@ html{
   font-size: 21px;
   text-align: center;
   color: black;
+}
+#button_image{
+  background-image: url(./img/OFF.png);
+}
+#button_image.ON{
+  background-image: url(img/ON.png);
 }
