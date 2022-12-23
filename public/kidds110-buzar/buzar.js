@@ -8,7 +8,7 @@ function audio() {
 
     let btn = document.getElementsByClassName("btn")[0];
     console.log(btn);
-    if (btn.textContent === "おん！！") {
+    if (btn.imageContent === "") {
       btn.textContent = "おふ！！";
     } else {
       btn.textContent = "おん！！";
