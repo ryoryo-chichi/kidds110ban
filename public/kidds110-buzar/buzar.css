@@ -12,6 +12,8 @@ h1 {
   color: yellow;
   font-size: 130px;
   text-align: center;
+  padding-top: 0%;
+  margin-top: 0%;
 }
 
 .btn {
@@ -23,6 +25,7 @@ h1 {
   text-decoration: none;
   text-align: center;
   margin-left: 100px;
+  border-style:none;/*ボタンの画像の周りに枠があったから消すやつ*/
 }
 ul{
   display: flex;
@@ -85,11 +88,13 @@ html{
   height: 150px;
   margin: 0px;
 }
+/*ナビゲーションバーの文字設定*/
 #screen_name{
   font-size: 21px;
   text-align: center;
   color: black;
 }
+/*画像を押したらon offかわる*/
 #button_image{
   background-image: url(./img/OFF.png);
 }
