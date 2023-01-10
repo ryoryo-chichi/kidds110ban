@@ -144,6 +144,11 @@ ul {
   height: 150px;
   margin: 0px;
 }
+#screen_name{
+  font-size: 21px;
+  text-align: center;
+  color: black;
+}
 a {
   display: block;
   text-decoration: none;
