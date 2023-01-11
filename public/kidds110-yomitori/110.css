@@ -1,5 +1,4 @@
 #setumei{
-  padding-top: 100px;
   text-align: center;
 }
 p {
@@ -9,6 +8,13 @@ p {
 
 title {
   size: 50px;
+}
+#oosaka_110{
+  width: 50%;
+  margin-right: 150px;
+}
+#aichi_110{
+  width: 25%;
 }
 
 .btn {
@@ -36,7 +42,7 @@ title {
   left: 23%;
   text-decoration: none;
   font-weight: bolder;
-  margin-top: 500px;
+  margin-top: 550px;
   margin-left: 60px;
  
 }
