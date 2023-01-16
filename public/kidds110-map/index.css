@@ -1,0 +1,100 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+#map {
+  height: 84%;
+  width: 100%;
+}
+
+.column {
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  #div {
+    height: auto;
+  }
+
+  button {
+    height: 70px;
+    width: 100px;
+    font-size: 36px;
+    margin: 20px 10px 20px 10px;
+    background-color: bisque;
+  }
+}
+#fixed-footer-menu {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  opacity: 1;
+  z-index: 100;
+}
+
+h1 {
+  font-size: 7em;
+}
+
+#i {
+  font-size: 3em;
+}
+
+ul {
+  display: flex;
+}
+
+/* メニューを横並びにする */
+#fixed-footer-menu ul {
+  display: flex;
+  list-style: none;
+   margin: 0;
+  width: 300%;
+  background: skyblue;
+}
+
+/* メニューの要素 */
+#fixed-footer-menu li {
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* メニューのボタン */
+#fixed-footer-menu li a {
+  color: #333;
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 0px 80px;
+  font-size: 8px;
+  text-decoration: none;
+}
+
+/* アイコンのサイズを調整 */
+.img {
+  width: 200px;
+  height: 150px;
+  margin: 0px;
+}
+#screen_name{
+  font-size: 21px;
+  text-align: center;
+  color: black;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin-right: 35px;
+  font-size: 50px;
+}
+#screen_name{
+  font-size: 20px;
+  text-align: center;
+}
