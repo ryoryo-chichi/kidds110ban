@@ -14,7 +14,7 @@ body {
 }
 
 #map {
-  height: 84%;
+  height: 80%;
   width: 100%;
 }
 
@@ -26,7 +26,6 @@ button {
 } */
 
 h1 {
-  color: yellow;
   font-size: 20px;
   text-align: center;
   padding-top: 0%;
@@ -40,8 +39,10 @@ a {
   display: block;
   text-decoration: none;
   color: black;
-  margin-right: 5px;
+  margin-right: 16px;
+  margin-left: 6px;
   font-size: 20px;
+  margin-top: 12px;
 }
 body {
   margin: 0;
@@ -90,14 +91,14 @@ html {
 
 /* アイコンのサイズを調整 */
 .img {
-  width: 200px;
-  height: 150px;
+  width: 60px;
+  height: 60px;
   margin: 0px;
 }
 
 /*ナビゲーションバーの文字設定*/
 #screen_name {
-  font-size: 21px;
+  font-size: 10px;
   text-align: center;
   color: black;
 }

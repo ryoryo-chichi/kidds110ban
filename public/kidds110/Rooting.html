@@ -27,14 +27,11 @@
             <tr><th>起点：</th><td><input type="text" name="start" id="start" size="20" maxlength="100"value="名古屋駅"></td></tr>
             <tr><th>終点：</th><td><input type="text" name="end" id="end" size="20" maxlength="100"value="トライデントコンピュータ専門学校"></td></tr>
         </table>
-        <p>
-            <input type="button" value="検索" onclick="searchRoute()">
-            <!-- <button id="searchRoute">検索</button> -->
-        </p>
+            <input class="favorite styled"type="button" value="みちをさがす！" onclick="searchRoute()">
     </div>
     <div id="map"></div>
     </script>
-    <!-- <footer>
+    <footer>
         <div id="fixed-footer-menu">
           <ul>
             <a href="https://ドメイン名/">
@@ -55,7 +52,7 @@
             </a>
           </ul>
         </div>
-      </footer> -->
+      </footer>
     <!-- APIキーを設定する -->
     <!-- language=jaで日本語表示の地図を表示する -->
     <!-- callback=initMapでinitMapメソッドを呼び出す -->

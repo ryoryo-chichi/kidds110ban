@@ -2,14 +2,24 @@ var latitude;
 var longitude;
 var array;
 var letter = [];
+var markers = [];
 var arraytest = "";
 var word = "";
 var finalanswer;
 var placeCount = [];
 var abcde;
+var infowindow;
 var queryString;
 var value1;
 var khajana;
+var map;
+var maker;
+var directionsDisplay;
+var directionsService;
+var response;
+var pinImage_red = new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/icons/red-dot.png");
+var pinImage_blue = new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");
+var MarkerArray = new google.maps.MVCArray();
 
 const firebaseConfig = {
   apiKey: "AIzaSyBlqNHdLwYQ_7o0UgXpMbQxt1d7l5F1H4s",
@@ -21,7 +31,7 @@ const firebaseConfig = {
   appId: "1:645482197750:web:980af93b0137d2c130b2d7",
   measurementId: "G-67PQD2TSR7",
 };
-
+//initialize();
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
@@ -63,7 +73,7 @@ db.collection("users")
 //       console.log(doc.data());
 //     });
 //   });
-
+//現在地の座標をセーブするコード
 // saveButton.addEventListener("click", function () {
 //   console.log(latitude + "," + longitude);
 //   db.collection("users")
@@ -110,24 +120,29 @@ db.collection("users")
     test();
     initMap();
   });
+//マップ生成？
 function initMap() {
   // Map option
 
   var options = {
     center: { lat: 35.1725302, lng: 136.8865799 },
     zoom: 8,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
   //New Map
   map = new google.maps.Map(document.getElementById("map"), options);
 
-  //listen for click on map location
-
-  google.maps.event.addListener(map, "click", (event) => {
-    //add Marker
-    marker({ location: event.latLng });
-    console.log("marker");
+  directionsDisplay = new google.maps.DirectionsRenderer({
+    
+    polylineOptions: {
+      //strokeColor: '#FF0000',
+      strokeColor: '#1e90ff',
+      strokeWeight: 6,
+      strokeOpacity: 0.6
+  }
   });
+  //listen for click on map location
 
   console.log("placeCount " + placeCount.length);
 
@@ -150,7 +165,6 @@ function initMap() {
       //draggable:true,
       //icon:'/scripts/img/logo-footer.png'
     });
-
     marker.addListener("click", function (e) {
       // data form firebase
       var touchPoint = e.latLng.lat() + "," + e.latLng.lng();
@@ -212,4 +226,104 @@ function initMap() {
       });
     });
   }
+  directionsDisplay = new google.maps.DirectionsRenderer({
+    polylineOptions: {
+        //strokeColor: '#FF0000',
+        strokeColor: '#1e90ff',
+        strokeWeight: 6,
+        strokeOpacity: 0.6
+    }
+});
+directionsDisplay.setMap(map);
+
+// createMarker関数の呼び出し
+createMarker();
+}
+//ルート検索
+function searchRoute() {
+  var start = document.getElementById("start").value;
+  var end = document.getElementById("end").value;
+
+  var rendererOptions = {
+    draggable: true,
+    preserveViewport: false,
+  };
+
+  directionsService = new google.maps.DirectionsService();
+  var request = {
+    origin: start,
+    destination: end,
+    travelMode: google.maps.DirectionsTravelMode.DRIVING, // 自動車でのルート
+    unitSystem: google.maps.DirectionsUnitSystem.METRIC, // 単位km表示
+    optimizeWaypoints: true, // 最適化された最短距離にする
+    avoidHighways: true, // 高速道路を除外
+    avoidTolls: true // 有料道路を除外
+  };
+  directionsService.route(request, function (response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+      directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+    }
+    //overview_pathを表示する
+    // for (var i = 0; i < response.routes.length; i++) {
+    //   var r = response.routes[i];
+    //   for (var j = 0; j < r.overview_path.length; j++) {
+    //     var latlng = r.overview_path[j];
+    //     marker = new google.maps.Marker({
+    //       position: latlng,
+    //       icon: pinImage_red,
+    //       map: map
+    //     });
+    //     markers.push(marker);
+    //   }
+    // }
+  });
+  map = new google.maps.Map(document.getElementById("map_canvas"), response);
+  directionsDisplay.setMap(map);
+  //createMarker();
+}
+//createMarker関数
+function createMarker() {
+  // mapをクリックしたときのイベントを設定
+  google.maps.event.addListener(map, 'click', maplistener);
+
+  // mapをクリックしたときの処理
+  function maplistener(event) {
+    // marker作成
+    marker = new google.maps.Marker({
+      map: map,
+      draggable: true, // ドラッグを可能にする
+      icon: pinImage_blue
+    });
+    // markerの位置を設定
+    // event.latLng.lat()でクリックしたところの緯度を取得
+    marker.setPosition(new google.maps.LatLng(event.latLng.lat(), event.latLng.lng()));
+    MarkerArray.push(marker);
+  }
+}
+//deleteMarkers関数
+function deleteMarkers() {
+  MarkerArray.forEach(function (marker, idx) { marker.setMap(null); });
+  MarkerArray = []; // marker配列の初期化
+}
+//csvOutput関数
+function csvOutput() {
+  MarkerArray.forEach(function (marker, idx) {
+    var pos = marker.getPosition();
+    var lat = pos.lat();
+    var lng = pos.lng();
+    $("#csv").append(lat + "," + lng + "<br />");
+  });
+}
+//csvDelete関数
+function csvDelete() {
+  $("#csv").empty();
+}
+//invisibleMarkers関数
+function invisibleMarkers() {
+  markers.forEach(function (marker, idx) { marker.setVisible(false); });
+}
+//visibleMarkers関数
+function visibleMarkers() {
+  markers.forEach(function (marker, idx) { marker.setVisible(true); });
 }

@@ -259,12 +259,12 @@ function initMap() {
 
 //buzzer button
 //マップの画面でブザーボタン押すとbuzar.htmlに飛ぶようになっている
-document.getElementById("buzzerButton").addEventListener("click", function () {
-  window.location.href = "https://formtest12-19.web.app/buzar.html";
-});
-document.getElementById("routeButton").addEventListener("click", function () {
-  window.location.href = "https://formtest12-19.web.app/Rooting.html";
-});
-document.getElementById("saveButton").addEventListener("click", function () {
-  window.location.href = "https://formtest12-19.web.app/Camera.html";
-});
+// document.getElementById("buzzerButton").addEventListener("click", function () {
+//   window.location.href = "https://formtest12-19.web.app/buzar.html";
+// });
+// document.getElementById("routeButton").addEventListener("click", function () {
+//   window.location.href = "https://formtest12-19.web.app/Rooting.html";
+// });
+// document.getElementById("saveButton").addEventListener("click", function () {
+//   window.location.href = "https://formtest12-19.web.app/Camera.html";
+// });
