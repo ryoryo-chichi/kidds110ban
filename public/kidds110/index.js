@@ -73,22 +73,6 @@ const db = firebase.firestore();
 //const docRef = firestore.doc("samples").ref();
 const saveButton = document.getElementById("saveButton");
 
-//座標を取得
-// function test() {
-//   navigator.geolocation.getCurrentPosition(test2);
-// }
-
-// function test2(position) {
-//   //my code
-//   latitude = position.coords.latitude;
-//   longitude = position.coords.longitude;
-
-//   console.log(latitude);
-//   console.log(longitude);
-// }
-
-//test();
-
 //get all data where statement
 db.collection("users")
   .where("answers", "==", "")
@@ -99,42 +83,6 @@ db.collection("users")
     });
   });
 
-//get all data
-// db.collection("users")
-//   .get()
-//   .then((snapshot) => {
-//     snapshot.docs.forEach((doc) => {
-//       console.log(doc.data());
-//     });
-//   });
-
-//  ボタンを押すと座標を表示する
-//saveButton.addEventListener("click", function () {
-  // console.log(location1 + "," + location2);
-  // db.collection("users")
-  //   .where("points", "==", location1 + "," + location2)
-  //   .get()
-  //   .then((snapshot) => {
-  //     snapshot.docs.forEach((doc) => {
-  //       console.log(doc.data());
-  //       khajana = doc.data();
-  //       console.log({ khajana });
-  //     });
-  //     if (khajana) {
-  //       alert(`${location1 + "," + location2}この座標を既に登録されています`);
-  //     } else {
-  //       db.collection("users").add({
-  //         answers: "",
-  //         points: location1 + "," + location2,
-  //       });
-  //       alert(`${location1 + "," + location2}この座標を登録しました`);
-  //       refreshPage();
-  //     }
-  //   });
-
-  // saveボタン押すと次のページに飛ぶ
-//   window.location.href = "zahyou.html";
-// });
 
 //新しい座標を追加する時に追加した座標をすぐに地図に反映するコード ページをreloadしている
 function refreshPage() {
