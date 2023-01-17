@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<title>Document</title>
+<!-- firebase-fireStore -->
+<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-messaging.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmBHBpNAvml90S32OJzv2zkJbEOdWWJhQ"></script>
+
+
+<!-- 6.3.4 -->
+<link rel="stylesheet" href="Root.css">
+<script src="Root.js"></script>
+</head>
+<!-- initMapがあるとgoogle is not defined になってしまう -->
+<body>
+    <div id="container">
+        <table>
+            <tr><th>起点：</th><td><input type="text" name="start" id="start" size="20" maxlength="100"value="名古屋駅"></td></tr>
+            <tr><th>終点：</th><td><input type="text" name="end" id="end" size="20" maxlength="100"value="トライデントコンピュータ専門学校"></td></tr>
+        </table>
+        <p>
+            <input type="button" value="検索" onclick="searchRoute()">
+            <!-- <button id="searchRoute">検索</button> -->
+        </p>
+    </div>
+    <div id="map"></div>
+    </script>
+    <!-- <footer>
+        <div id="fixed-footer-menu">
+          <ul>
+            <a href="https://ドメイン名/">
+              <img src="./img/カメラ.png" class="img">
+              <p id="screen_name">110ばんのいえとうろく</p>
+            </a>
+            <a href="https://ドメイン名/">
+              <img src="./img/地図.png" class="img">
+              <p id="screen_name">ちずがめん</p>
+            </a>
+            <a href="https://ドメイン名/">
+              <img src="./img/経路.png" class="img">
+              <p id="screen_name">みちあんない</p>
+            </a>
+            <a href="https://s212069.web.app/kidds110-buzar/buzar.html">
+              <img src="./img/ブザー.png" class="img">
+              <p id="screen_name">ぼうはんぶざー</p>
+            </a>
+          </ul>
+        </div>
+      </footer> -->
+    <!-- APIキーを設定する -->
+    <!-- language=jaで日本語表示の地図を表示する -->
+    <!-- callback=initMapでinitMapメソッドを呼び出す -->
+    <div id="dpanel">
+        <div id="directionsPanel" style="width:100%; height:640px;"></div>
+    </div>
+</body>
+
+</html>
