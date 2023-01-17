@@ -10,8 +10,8 @@ window.addEventListener('load', (event) => {
     setTimeout(() => {
         music.play();
         console.log('a');
-        setTimeout(function () {
-            window.location.href = 'https://s212069.web.app/kidds110-sippai/sippai.html';
-        }, 5000);
+        // setTimeout(function () {
+        //     window.location.href = 'https://s212069.web.app/kidds110-sippai/sippai.html';
+        // }, 5000);
     }, 3000);
 });
