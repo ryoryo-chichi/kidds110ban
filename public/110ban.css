@@ -1,5 +1,31 @@
-#setumei{
-  text-align: center;
+#canvas {
+  position: absolute;
+  top: 10px;
+  width: 500px;
+  height: 500px;
+}
+.camerabtn {
+  position: absolute;
+  left: 300px;
+  width: auto;
+  height: auto;
+  z-index: 10000;
+  font-size: 50px;
+  border: 1px solid #999;
+  padding: 10px;
+  background: #fff9cc;
+  margin-top: 10px;
+}
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.column {
+  width: 100%;
 }
 p {
   padding-top: 5%;
@@ -9,16 +35,10 @@ p {
 title {
   size: 50px;
 }
-#oosaka_110{
-  width: 50%;
-  margin-right: 150px;
-}
-#aichi_110{
-  width: 25%;
-}
 
 .btn {
   position: absolute;
+  text-align: center;
   display: inline-block;
   border-radius: 20%;
   /* 角丸       */
@@ -36,26 +56,23 @@ title {
   /* 文字色     */
   line-height: 1em;
   /* 1行の高さ  */
-  transition: .3s;
+  transition: 0.3s;
   /* なめらか変化 */
-  top: 34%;
-  left: 23%;
+  top: 75%;
+  left: 10%;
   text-decoration: none;
   font-weight: bolder;
-  margin-top: 550px;
-  margin-left: 60px;
- 
 }
 
 .button_solid006 a:hover {
-  background: #FF2F2F;
-  box-shadow: 0 5px 0px #B73434, 0 7px 30px #FF2F2F;
+  background: #ff2f2f;
+  box-shadow: 0 5px 0px #b73434, 0 7px 30px #ff2f2f;
 }
 
 .button_solid006 a:active {
-  background: #FF8282;
-  box-shadow: 0 0px 10px #FF8282;
-  box-shadow: 0 5px 0px #CC6262, 0 4px 10px #FF8282;
+  background: #ff8282;
+  box-shadow: 0 0px 10px #ff8282;
+  box-shadow: 0 5px 0px #cc6262, 0 4px 10px #ff8282;
 }
 
 body {
@@ -102,71 +119,10 @@ html {
   z-index: 2;
 }
 
-#fixed-footer-menu {
-  position: fixed;
-  width: 100%;
-  bottom: 0px;
-  opacity: 1;
-  z-index: 100;
-}
-
 h1 {
   font-size: 7em;
 }
 
 #i {
   font-size: 3em;
-}
-
-ul {
-  display: flex;
-}
-
-/* メニューを横並びにする */
-#fixed-footer-menu ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  width: 300%;
-  background: skyblue;
-}
-
-/* メニューの要素 */
-#fixed-footer-menu li {
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-}
-
-/* メニューのボタン */
-#fixed-footer-menu li a {
-  color: #333;
-  text-align: center;
-  display: block;
-  width: 100%;
-  padding: 0px 80px;
-  font-size: 8px;
-  text-decoration: none;
-}
-
-/* アイコンのサイズを調整 */
-.img {
-  width: 200px;
-  height: 150px;
-  margin: 0px;
-}
-
-#screen_name {
-  font-size: 20px;
-  text-align: center;
-  color: black;
-}
-
-a {
-  display: block;
-  text-decoration: none;
-  color: black;
-  margin-right: 35px;
-  font-size: 50px;
 }

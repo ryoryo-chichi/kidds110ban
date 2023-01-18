@@ -1,5 +1,55 @@
-#setumei{
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+#map {
+  height: 84%;
+  width: 100%;
+}
+.styled {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
   text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgba(220, 0, 0, 1);
+  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.styled:hover {
+  background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width: 480px) {
+  #div {
+    height: auto;
+  }
+
+  button {
+    height: 70px;
+    width: 100px;
+    font-size: 36px;
+    margin: 20px 10px 20px 10px;
+    background-color: bisque;
+  }
 }
 p {
   padding-top: 5%;
@@ -9,16 +59,10 @@ p {
 title {
   size: 50px;
 }
-#oosaka_110{
-  width: 50%;
-  margin-right: 150px;
-}
-#aichi_110{
-  width: 25%;
-}
 
 .btn {
   position: absolute;
+  text-align: center;
   display: inline-block;
   border-radius: 20%;
   /* 角丸       */
@@ -38,14 +82,11 @@ title {
   /* 1行の高さ  */
   transition: .3s;
   /* なめらか変化 */
-  top: 34%;
-  left: 23%;
+  top: 75%;
+  left: 10%;
   text-decoration: none;
   font-weight: bolder;
-  margin-top: 550px;
-  margin-left: 60px;
- 
-}
+} 
 
 .button_solid006 a:hover {
   background: #FF2F2F;
@@ -111,21 +152,45 @@ html {
 }
 
 h1 {
-  font-size: 7em;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 0%;
+  margin-top: 0%;
 }
-
-#i {
-  font-size: 3em;
-}
-
 ul {
   display: flex;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin-right: 16px;
+  margin-left: 6px;
+  font-size: 20px;
+  margin-top: 12px;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+html {
+  margin: 0;
+  padding: 0;
+}
+
+#fixed-footer-menu {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  opacity: 1;
+  z-index: 100;
 }
 
 /* メニューを横並びにする */
 #fixed-footer-menu ul {
   display: flex;
   list-style: none;
+  padding: 0;
   margin: 0;
   width: 300%;
   background: skyblue;
@@ -145,28 +210,33 @@ ul {
   text-align: center;
   display: block;
   width: 100%;
-  padding: 0px 80px;
   font-size: 8px;
   text-decoration: none;
 }
 
 /* アイコンのサイズを調整 */
 .img {
-  width: 200px;
-  height: 150px;
+  width: 60px;
+  height: 50px;
   margin: 0px;
 }
 
+/*ナビゲーションバーの文字設定*/
 #screen_name {
-  font-size: 20px;
+  font-size: 10px;
   text-align: center;
   color: black;
 }
-
-a {
-  display: block;
-  text-decoration: none;
-  color: black;
-  margin-right: 35px;
-  font-size: 50px;
+#camera_img{
+  margin-left: 20px;
 }
+
+/* @media screen and (max-width: 480px) {
+  button {
+    height: 40px;
+    width: auto;
+    font-size: 24px;
+    margin: 40px 4px 2px 4px;
+    background-color: bisque;
+  }
+} */
